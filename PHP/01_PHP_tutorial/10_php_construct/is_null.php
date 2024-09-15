@@ -1,4 +1,5 @@
 <?php
+
 $isnull = fn($v) => is_null($v);
 $color = null;
 echo $isnull($color); // true
