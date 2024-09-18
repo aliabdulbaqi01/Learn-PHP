@@ -12,12 +12,12 @@
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <div>
                 <label for="name">Name:</label>
-                <input type="text" name="name" required="required" placeholder="Enter your name" />
+                <input type="text" name="name" required="required" placeholder="Enter your name"/>
             </div>
 
             <div>
                 <label for="name">Email:</label>
-                <input type="email" name="email" required="required" placeholder="Enter your email" />
+                <input type="email" name="email" required="required" placeholder="Enter your email"/>
             </div>
 
             <button type="submit">Subscribe</button>
@@ -27,7 +27,7 @@
 
         <?php
         //---------------------------------------------
-        // WARNING: this doesn't include sanitization
+        // WARNING: this doesn't include sanitization.php
         // and validation
         //---------------------------------------------
         if (isset($_POST['name'], $_POST['email'])) {
