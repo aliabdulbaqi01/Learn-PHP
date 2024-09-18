@@ -1,26 +1,21 @@
 <?php
+require __DIR__ . '/../src/bootstrap.php';
 
-include_once 'inc/header.php';
+if (is_post_request()) {
+    echo 'post';
+}
 
+flash(
+    'home page',
+    'just test our home page.',
+    'success'
+);
 
 ?>
+<?php view('header', ['title' => 'Home']); ?>
 
-<h2>Welcome to out website</h2>
-<p>
-    You can register and create new account
-</p>
-<h2 class="mt-20 mb-10">All registered users</h2>
-<table class="t1">
-    <tr>
-        <th>SL</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-    </tr>
-</table>
-
+<h1>welcome to our home page</h1>
+<a href="register.php">register</a>
 
 <?php
-include_once 'inc/footer.php';
-?>
+view('footer'); ?>
