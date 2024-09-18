@@ -82,7 +82,6 @@ function is_required(array $data, string $field): bool
     return isset($data[$field]) && trim($data[$field]) !== '';
 }
 
-
 /**
  * Return true if the value is a valid email
  * @param array $data

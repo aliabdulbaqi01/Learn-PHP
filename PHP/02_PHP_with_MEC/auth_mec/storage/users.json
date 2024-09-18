@@ -1,2 +1,27 @@
 [
+    {
+        "email": "admin@gmail.com",
+        "password": "12345",
+        "created_at": "9am"
+    },
+    {
+        "email": "user@gmail.com",
+        "password": "password",
+        "password_confirmation": "password"
+    },
+    {
+        "email": "user@gmail.com",
+        "password": "password",
+        "password_confirmation": "password"
+    },
+    {
+        "email": "ali@gmail.com",
+        "password": "password",
+        "password_confirmation": "password"
+    },
+    {
+        "email": "aliabdulbaqi05@gmail.com",
+        "password": "$2y$10$0GOXE82h\/B4hj04M2Q\/jsuWCvA7vUm8fk1HrfGTBpc5kOxpdKQ75q",
+        "created_at": "2024-09-18 22:22:56"
+    }
 ]
