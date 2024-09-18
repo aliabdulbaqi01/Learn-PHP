@@ -2,24 +2,24 @@
 const FILTERS = [
     'string' => FILTER_UNSAFE_RAW,
     'string[]' => [
-        'filter' =>FILTER_UNSAFE_RAW,
+        'filter.php' => FILTER_UNSAFE_RAW,
         'flags' => FILTER_REQUIRE_ARRAY
     ],
     'email' => FILTER_SANITIZE_EMAIL,
     'int' => [
-        'filter' => FILTER_SANITIZE_NUMBER_INT,
+        'filter.php' => FILTER_SANITIZE_NUMBER_INT,
         'flags' => FILTER_REQUIRE_SCALAR
     ],
     'int[]' => [
-        'filter' => FILTER_SANITIZE_NUMBER_INT,
+        'filter.php' => FILTER_SANITIZE_NUMBER_INT,
         'flags' => FILTER_REQUIRE_ARRAY
     ],
     'float' => [
-        'filter' => FILTER_SANITIZE_NUMBER_FLOAT,
+        'filter.php' => FILTER_SANITIZE_NUMBER_FLOAT,
         'flags' => FILTER_FLAG_ALLOW_FRACTION
     ],
     'float[]' => [
-        'filter' => FILTER_SANITIZE_NUMBER_FLOAT,
+        'filter.php' => FILTER_SANITIZE_NUMBER_FLOAT,
         'flags' => FILTER_REQUIRE_ARRAY
     ],
     'url' => FILTER_SANITIZE_URL,
