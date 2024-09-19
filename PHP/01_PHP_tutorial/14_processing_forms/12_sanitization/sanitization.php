@@ -1,47 +1,4 @@
 <?php
-
-
-function array_trim(array $items): array
-{
-    return array_map(function ($item) {
-        if (is_string($item)) {
-            return trim($item);
-        } elseif (is_array($item)) {
-            return array_trim($item);
-        } else
-            return $item;
-    }, $items);
-}
-
-function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_UNSAFE_RAW, array $filters = FILTERS, bool $trim = true): array
-{
-
-    // filter array
-    if ($fields) {
-        $options = array_map(fn($field) => $filters[$field], $fields);
-        $data = filter_var_array($inputs, $options);
-    } else {
-
-        $data = filter_var_array($inputs, $default_filter);
-    }
-    return $trim ? array_trim($data) : $data;
-
-}
-
-
-// example of $fields
-// should be an associative array in which the key
-$fields = [
-    'name' => 'string',
-    'email' => 'email',
-    'age' => 'int',
-    'weight' => 'float',
-    'github' => 'url',
-    'hobbies' => 'string[]'
-];
-// strings[] an array of strings
-
-// to get a filter based on the rule of a field
 const FILTERS = [
     'string' => FILTER_UNSAFE_RAW,
     'string[]' => [
@@ -67,3 +24,46 @@ const FILTERS = [
     ],
     'url' => FILTER_SANITIZE_URL,
 ];
+
+/**
+ * Recursively trim strings in an array
+ * @param array $items
+ * @return array
+ */
+function array_trim(array $items): array
+{
+    return array_map(function ($item) {
+        if (is_string($item)) {
+            return trim($item);
+        } elseif (is_array($item)) {
+            return array_trim($item);
+        } else
+            return $item;
+    }, $items);
+}
+
+/**
+ * Sanitize the inputs based on the rules an optionally trim the string
+ * @param array $inputs
+ * @param array $fields
+ * @param int $default_filter FILTER_SANITIZE_STRING
+ * @param array $filters FILTERS
+ * @param bool $trim
+ * @return array
+ */
+function sanitize(array $inputs, array $fields = [], int $default_filter = FILTER_UNSAFE_RAW, array $filters = FILTERS, bool $trim = true): array
+{
+    // trim
+    foreach ($fields as $field) {
+        trim($field);
+    }
+
+    if ($fields) {
+        $options = array_map(fn($field) => $filters[$field], $fields);
+        $data = filter_var_array($inputs, $options);
+    } else {
+        $data = filter_var_array($inputs, $default_filter);
+    }
+
+    return $trim ? array_trim($data) : $data;
+}
