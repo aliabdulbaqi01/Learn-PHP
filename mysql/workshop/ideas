@@ -1,0 +1,6 @@
+Routes:
+// create a route file that will have
+        - associative array that have all routes
+        - path => view
+by add function you can add this function to the array
+by route function you can get the get the route
