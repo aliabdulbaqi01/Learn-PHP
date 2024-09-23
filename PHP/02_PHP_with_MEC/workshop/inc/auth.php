@@ -86,7 +86,7 @@ function guest()
     // if the user is authenticated
     if (isset($_SESSION['username'])) {
         // redirect him to home page
-        header('Location: index.php');
+        header('Location: index.php.php');
     }
 }
 

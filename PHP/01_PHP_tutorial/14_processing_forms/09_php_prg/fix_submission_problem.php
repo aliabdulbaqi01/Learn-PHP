@@ -33,7 +33,7 @@ if ($request_method === 'POST') {
     $_SESSION['inputs'] = $inputs;
 
     // redirect to the page itself
-    header("Refresh: 5", true, 303);
+    header('Location: fix_submission_problem.php', true, 303);
     exit;
 } elseif ($request_method === 'GET') {
     if (isset($_SESSION['valid'])) {

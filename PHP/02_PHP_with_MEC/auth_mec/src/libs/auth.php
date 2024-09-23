@@ -78,7 +78,7 @@ function login($data): array
     if ($user) {
         if (password_verify($data['password'], $user['password'])) {
             $_SESSION['user'] = $user;
-            redirect_to('index');
+            redirect_to('index.php');
         }
         $errors['password'] = 'Wrong password';
         return $errors;
@@ -140,7 +140,7 @@ function auth()
 function guest()
 {
     if (isset($_SESSION['user'])) {
-        redirect_to('index');
+        redirect_to('index.php');
     }
 }
 

@@ -9,7 +9,7 @@ if (filter_has_var(INPUT_POST, 'username')) {
     ];
 
     if (login($user)) {
-        header('Location: index.php');
+        header('Location: index.php.php');
         exit();
     }
 }
