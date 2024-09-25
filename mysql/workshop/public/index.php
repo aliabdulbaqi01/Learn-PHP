@@ -1,25 +1,10 @@
 <?php
-require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../database/migration.php';
 require_once __DIR__ . '/../src/bootstrap.php';
 
-global $data;
-dd($data);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+global $conn;
+dd($conn);
 
 
 // project description (to do list)
