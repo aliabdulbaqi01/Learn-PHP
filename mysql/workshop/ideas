@@ -7,6 +7,8 @@ by route function you can get the get the route
 
 
 
+// inputs => create function that take the inputs from the post method and sanitize it
+
 
 // project description (to do list)
 /*
