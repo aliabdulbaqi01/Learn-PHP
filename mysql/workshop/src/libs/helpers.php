@@ -35,3 +35,17 @@ function current_url()
     }
     return $url[0];
 }
+
+/*
+ * return the file from the public position
+ */
+function public_base(string $file)
+{
+    return __DIR__ . "/../../public/" . $file;
+}
+
+
+
+/*
+ *
+ */
