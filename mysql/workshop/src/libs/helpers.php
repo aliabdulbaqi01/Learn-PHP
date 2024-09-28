@@ -25,3 +25,13 @@ function dump($data): void
     echo '</div>';
     die();
 }
+
+function current_url()
+{
+    $url = $_SERVER['REQUEST_URI'];
+    $url = array_reverse(explode('/', $url));
+    if (empty($url[0])) {
+        return $url[1];
+    }
+    return $url[0];
+}

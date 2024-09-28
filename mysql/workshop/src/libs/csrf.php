@@ -15,7 +15,7 @@ function csrf()
  */
 function csrf_input()
 {
-    $token = $_SESSION['csrf'];
+    $token = $_SESSION['csrf'] ?? '';
     return "<input type='hidden' name='token' value='$token'>";
 }
 
@@ -23,7 +23,7 @@ function csrf_input()
 /*
  * Verify taken
  */
-function csrf_token()
+function csrf_verify()
 {
     // declare taken contain  the hidden value
     $taken = filter_input(INPUT_POST, 'token', FILTER_UNSAFE_RAW);
