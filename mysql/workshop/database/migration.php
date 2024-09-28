@@ -13,7 +13,7 @@ $create_users_table = "CREATE TABLE IF NOT EXISTS `users` (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
     )";
 mysqli_query($conn, $create_users_table);
 
@@ -42,8 +42,8 @@ $password = password_hash('password', PASSWORD_DEFAULT);
 $check_user = "SELECT * FROM users WHERE email = '$email'";
 $result = mysqli_query($conn, $check_user);
 if (mysqli_num_rows($result) == 0) {
-    $insert_default_user = "INSERT INTO `users` ( `name`, `email`, `password`,) VALUES
-                                ('ali', 'admin', '$password') ";
+    $insert_default_user = "INSERT INTO `users` (`name`, `email`, `password`) VALUES
+                                ('$name', '$email', '$password') ;";
     mysqli_query($conn, $insert_default_user);
 }
 
